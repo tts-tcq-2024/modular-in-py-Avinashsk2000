@@ -1,6 +1,7 @@
 from color_pair import get_color_from_pair_number, color_pair_to_string
 
 def generate_reference_manual():
+    """Generates a reference manual of color pairs."""
     manual = []
     for pair_number in range(1, 26):
         major, minor = get_color_from_pair_number(pair_number)
@@ -8,4 +9,5 @@ def generate_reference_manual():
     return "\n".join(manual)
 
 def print_reference_manual():
+    """Prints the reference manual for color pairs."""
     print(generate_reference_manual())
