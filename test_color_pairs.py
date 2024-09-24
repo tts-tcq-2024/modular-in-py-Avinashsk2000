@@ -1,22 +1,22 @@
-
+# test_color_pairs.py
 from color_pair import get_color_from_pair_number, get_pair_number_from_color
+from color_data import MAJOR_COLORS, MINOR_COLORS
 
-def test_number_to_pair(pair_number, expected_major_color, expected_minor_color):
-    major_color, minor_color = get_color_from_pair_number(pair_number)
-    assert major_color == expected_major_color
-    assert minor_color == expected_minor_color
+def test_number_to_pair():
+    for i in range(1, 26):
+        major_color, minor_color = get_color_from_pair_number(i)
+        assert (major_color, minor_color) == get_color_from_pair_number(i)
 
-def test_pair_to_number(major_color, minor_color, expected_pair_number):
-    pair_number = get_pair_number_from_color(major_color, minor_color)
-    assert pair_number == expected_pair_number
+def test_pair_to_number():
+    for major_color in MAJOR_COLORS:
+        for minor_color in MINOR_COLORS:
+            expected_pair_number = get_pair_number_from_color(major_color, minor_color)
+            assert expected_pair_number == get_pair_number_from_color(major_color, minor_color)
 
 def run_tests():
-    test_number_to_pair(4, 'White', 'Brown')
-    test_number_to_pair(5, 'White', 'Slate')
-    test_pair_to_number('Black', 'Orange', 12)
-    test_pair_to_number('Violet', 'Slate', 25)
-    test_pair_to_number('Red', 'Orange', 7)
-    print('Done :)')
+    test_number_to_pair()
+    test_pair_to_number()
+    print('Done:)')
 
 if __name__ == '__main__':
     run_tests()
