@@ -24,6 +24,6 @@ def run_tests():
     test_number_to_pair()
     test_pair_to_number()
     test_exceptions()
-    print("All tests passed!")
+    print("Done :)")
 if __name__ == '__main__':
     run_tests()
