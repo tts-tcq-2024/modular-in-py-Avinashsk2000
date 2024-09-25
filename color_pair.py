@@ -22,3 +22,6 @@ def get_pair_number_from_color(major_color, minor_color):
     except ValueError:
         raise Exception('Minor index out of range')
     return major_index * len(MINOR_COLORS) + minor_index + 1
+    
+def color_pair_to_string(major_color, minor_color):
+    return f'{major_color} {minor_color}'
