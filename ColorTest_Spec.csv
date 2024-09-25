@@ -1,0 +1,8 @@
+﻿,,,,,
+Test Case ID,Test Name,Function Name,Test Input,Expected Output,Description
+TC001,Valid Pair Mapping (Number to Color),test_number_to_pair(),Pair number from 1 to 25,Correct major and minor color pair,Ensures that all valid pair numbers map to the correct major and minor color combination.
+TC002,Valid Color Pair to Number Mapping,test_pair_to_number(),Major and minor color pair,Correct pair number,Ensures that all valid color pairs map to the correct pair number.
+TC003,Out-of-range Pair Number,test_exceptions(),26,"Exception: ""Major index out of range""",Ensures that attempting to access pair number 26 raises an exception.
+TC004,Invalid Major Color,test_exceptions(),"('Pink', 'Blue')","Exception: ""Major index out of range""",Ensures that an invalid major color raises an exception.
+TC005,Invalid Minor Color,test_exceptions(),"('White', 'Cyan')","Exception: ""Minor index out of range""",Ensures that an invalid minor color raises an exception.
+TC006,Invalid Color Pair (Both Invalid),test_exceptions(),"('Pink', 'Cyan')","Exception: ""Major index out of range""",Ensures that both invalid major and minor colors raise an exception.
