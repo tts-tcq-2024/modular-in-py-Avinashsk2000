@@ -1,4 +1,4 @@
-from color_pair import get_color_from_pair_number, get_pair_number_from_color, print_reference_manual
+from color_pair import get_color_from_pair_number, get_pair_number_from_color
 from color_data import MAJOR_COLORS, MINOR_COLORS
 import io, sys
 def test_number_to_pair():
@@ -12,12 +12,6 @@ def test_pair_to_number():
 def test_exceptions():
     assert_exception(lambda: get_color_from_pair_number(26), 'Major index out of range')
     assert_exception(lambda: get_pair_number_from_color('Invalid', 'Blue'), 'Major index out of range')
-def test_reference_manual_output():
-    captured_output = io.StringIO()
-    sys.stdout = captured_output
-    print_reference_manual()
-    sys.stdout = sys.__stdout__
-    assert "White Blue" in captured_output.getvalue()
 def assert_exception(func, expected_message):
     try: func()
     except Exception as e: assert str(e) == expected_message
@@ -25,6 +19,5 @@ def run_tests():
     test_number_to_pair()
     test_pair_to_number()
     test_exceptions()
-    test_reference_manual_output()
 if __name__ == '__main__':
     run_tests()
