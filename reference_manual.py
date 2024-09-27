@@ -7,7 +7,3 @@ def generate_reference_manual():
         major, minor = get_color_from_pair_number(pair_number)
         manual.append(f'{pair_number}: {color_pair_to_string(major, minor)}')
     return "\n".join(manual)
-
-def print_reference_manual():
-    """Prints the reference manual for color pairs."""
-    print(generate_reference_manual())
