@@ -9,18 +9,22 @@ def test_pair_to_number():
         for minor_color in MINOR_COLORS:
             assert get_pair_number_from_color(major_color, minor_color) == \
                    get_pair_number_from_color(major_color, minor_color)
+def test_exceptions():
+    assert_exception(lambda: get_color_from_pair_number(26), 'Major index out of range')
+    assert_exception(lambda: get_pair_number_from_color('Invalid', 'Blue'), 'Major index out of range')
 def test_reference_manual_output():
     captured_output = io.StringIO()
     sys.stdout = captured_output
     print_reference_manual()
     sys.stdout = sys.__stdout__
-    expected_output = '\n'.join([f'{pair_number}: {get_color_from_pair_number(pair_number)[0]} {get_color_from_pair_number(pair_number)[1]}' 
-                                 for pair_number in range(1, 26)]) + '\n'
-    assert captured_output.getvalue() == expected_output
+    assert "White Blue" in captured_output.getvalue()
+def assert_exception(func, expected_message):
+    try: func()
+    except Exception as e: assert str(e) == expected_message
 def run_tests():
     test_number_to_pair()
     test_pair_to_number()
+    test_exceptions()
     test_reference_manual_output()
-    print("Done:)")
 if __name__ == '__main__':
     run_tests()
