@@ -1,0 +1,7 @@
+﻿,,,,,,
+Test Scenario,Test Case ID,Test Case Name,Test Input,Expected Output,Test Description,
+Handling Number to Pair Mapping,TC001,test_number_to_pair,Pair numbers from 1 to 25,Major and Minor colors for each number,This test verifies the mapping of pair numbers (1 to 25) to the corresponding color pairs.,
+Handling Pair to Number Mapping,TC002,test_pair_to_number,All major and minor colors,Pair number for each color combination,This test verifies the mapping of each combination of major and minor colors to its respective pair number.,
+Handling Invalid Pair Number Exception,TC003,test_exceptions,Pair number > 25 or < 1,"Exception: ""Major index out of range""",This test ensures that invalid pair numbers (out of valid range) raise the appropriate exception.,
+Handling Invalid Color Exception,TC004,test_exceptions,Invalid major or minor color names,"Exception: ""Major index out of range""",This test ensures that invalid color names raise the appropriate exception when converting to a pair number.,
+Checking Reference Manual Print,TC005,test_reference_manual_output,N/A,Printed output for pair numbers 1-25,"This test captures and verifies the output of the reference manual, ensuring it prints the correct mapping for all 25 pairs.",
